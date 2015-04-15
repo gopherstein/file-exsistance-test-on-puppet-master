@@ -1,16 +1,16 @@
 <snippet>
   <content>
-  #file-exsistance-test-on-puppet-master
+#file-exsistance-test-on-puppet-master
 
   TODO: Add error checking and possibly tests.
 
-  ## Installation
+## Installation
 
   put this script in your puppet module under:
 
   <your module>/lib/puppet/parser/exists.rb
 
-  ## Usage
+## Usage
 
   You can use this to determine if a file exsists on the puppet master.
   This is extreamly useful if you need to access templates or files from a hierarchy.
@@ -36,7 +36,7 @@
 
 
 
-  ## Contributing
+## Contributing
 
   1. Fork it!
   2. Create your feature branch: `git checkout -b my-new-feature`
