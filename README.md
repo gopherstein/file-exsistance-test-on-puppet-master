@@ -8,26 +8,26 @@
 
   put this script in your puppet module under:
 
-  <your module>/lib/puppet/parser/exists.rb
+  $your_module/lib/puppet/parser/exists.rb
 
 ## Usage
 
   You can use this to determine if a file exsists on the puppet master.
   This is extreamly useful if you need to access templates or files from a hierarchy.
 
-  i.e. <your module>/templates/domains/domain1.com/database.yml
+  i.e. $your_module/templates/domains/domain1.com/database.yml
        vs.
-       <your module>/templates/domains/domain2.com/database.yml
+       $your_module/templates/domains/domain2.com/database.yml
 
 
   Here is an example of how you would call it in a manifest file.
 
-   if exists("/etc/puppet/environments/${environment}/modules/<your module>/templates/${domain}/${environment}/database.yml"){
+   if exists("/etc/puppet/environments/${environment}/modules/$your_module/templates/${domain}/${environment}/database.yml"){
     file { "database.yml":
       path    => "/data/${application}/shared/config/database.yml",
       owner   => 'deploy',
       group   => 'deploy',
-      content => template("<your module>/${domain}/${environment}/database.yml"),
+      content => template("$your_module/${domain}/${environment}/database.yml"),
     }
   }
  
