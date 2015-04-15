@@ -22,6 +22,7 @@
 
   Here is an example of how you would call it in a manifest file.
 
+```
    if exists("/etc/puppet/environments/${environment}/modules/$your_module/templates/${domain}/${environment}/database.yml"){
     file { "database.yml":
       path    => "/data/${application}/shared/config/database.yml",
@@ -30,7 +31,7 @@
       content => template("$your_module/${domain}/${environment}/database.yml"),
     }
   }
- 
+``` 
  Here, you can see that the file method will only be called if the template exists. Otherwise it will ignore the template.
 
 
